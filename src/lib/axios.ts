@@ -12,7 +12,7 @@ const AxiosInstance = async () => {
     baseURL: backendUrl,
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjE0MGQzN2ZmLTg4YzUtNGFlNi02ZTJkLTA4ZGJmYTljNzU0MSIsIm5iZiI6MTcwMjU2ODMxMSwiZXhwIjoxNzAyNjI4MzExLCJpc3MiOiJ1Z3VyQHVndXIuY29tIiwiYXVkIjoidWd1ckB1Z3VyLmNvbSJ9.WSdDbS8m2KaSwzZWCCWtdNmxtCozrFBlb1w1tsJ7MXTs3sKBsr_V_HeR5SN4Fpm4avV1mZr38ul430ZvyZ1Eyw`,
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
 
@@ -26,6 +26,7 @@ const AxiosInstance = async () => {
         );
       }
       if (error.response?.status === 400) {
+        console.log("axs err", error);
         if (typeof error.response.data === "string") {
           toast.error(error.response.data);
         }

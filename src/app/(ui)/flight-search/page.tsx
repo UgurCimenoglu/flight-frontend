@@ -32,14 +32,15 @@ const FlightSearch = () => {
     mutationKey: ["addFlights"],
     onSuccess: (data) => {
       handleCloseModal();
-      console.log(data);
+      console.log("dataaaa", data);
       toast.success(
         "Rezervasyon Başarıyla Oluşturuldu! Anasayfaya Yönlendiriliyorsunuz"
       );
-      router.push("/");
+      //router.push("/");
     },
     onError: (e) => {
-      toast.success(
+      console.log("ererere", e);
+      toast.error(
         "Rezervasyon Oluşturulurken Hata Meydana Geldi! Lütfen Bilgilerinizi Kontrol Ediniz!"
       );
     },
@@ -204,7 +205,7 @@ const FlightSearch = () => {
             rules={[
               {
                 required: true,
-                min: 3,
+                min: 1,
                 message: "Lüfen En Az 3 Karakter İçeren Bir İsim Giriniz!",
               },
             ]}
