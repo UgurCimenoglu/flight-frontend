@@ -21,7 +21,77 @@ export const GetFlights = async (
   )
     .post<GetFlightResponse>("/Flights/GetFlights", JSON.stringify(data))
     .then((res) => res.data)
-    .catch((e) => {
-      return e;
-    });
+    .catch((e) => e);
+};
+
+type AddFlightRequest = {
+  arrivalDateTime: string;
+  departureDateTime: string;
+  flightNumber: string;
+  from: string;
+  to: string;
+  price: number;
+  passengerInformation: {
+    name: string;
+    surname: string;
+    email: string;
+    phoneNumber: string;
+    address: string;
+    description?: string;
+  };
+};
+type AddFlightResponse = Result<any>;
+export const AddFlight = async (
+  data: Partial<AddFlightRequest>
+): Promise<AddFlightResponse> => {
+  return await (
+    await AxiosInstance()
+  )
+    .post<AddFlightResponse>("/Flights/Add", JSON.stringify(data))
+    .then((res) => res.data)
+    .catch((e) => e);
+};
+
+export type UserFlight = {
+  id: string;
+  arrivalDateTime: string;
+  departureDateTime: string;
+  flightNumber: string;
+  price: number;
+  from: string;
+  to: string;
+  description?: string;
+  isActive: boolean;
+  user: {
+    id: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+  };
+  passengerInformation: {
+    id: string;
+    name: string;
+    surname: string;
+    email: string;
+    phoneNumber: string;
+    address: string;
+    description: string;
+  };
+};
+type GetAllCurrentUserFlightsResponse = Result<UserFlight[]>;
+export const GetAllCurrentUserFlight =
+  async (): Promise<GetAllCurrentUserFlightsResponse> => {
+    return await (
+      await AxiosInstance()
+    )
+      .get<GetAllCurrentUserFlightsResponse>("/Flights/GetAllCurrentUserFlight")
+      .then((res) => res.data)
+      .catch((e) => e);
+  };
+
+export const DeleteById = async (query: string): Promise<Result<any>> => {
+  return (await AxiosInstance())
+    .delete<Result<any>>(`/Flights/DeleteById?id=${query}`)
+    .then((res) => res.data)
+    .catch((e) => e);
 };

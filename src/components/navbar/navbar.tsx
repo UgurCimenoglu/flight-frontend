@@ -5,27 +5,23 @@ import { Avatar, Dropdown, MenuProps } from "antd";
 import React from "react";
 import { useRouter } from "next/navigation";
 
-const items: MenuProps["items"] = [
-  {
-    label: "Profil Düzenle",
-    key: "profile",
-    onClick: () => {},
-  },
-  {
-    label: "Şifre Değiştir",
-    key: "password",
-    onClick: () => {},
-  },
-  {
-    icon: <LogoutOutlined />,
-    label: "Çıkış Yap",
-    key: "logout",
-    onClick: () => {},
-  },
-];
-
 const Navbar = () => {
   const router = useRouter();
+  const items: MenuProps["items"] = [
+    {
+      label: "Profil",
+      key: "profile",
+      onClick: () => {
+        router.push("my-profile");
+      },
+    },
+    {
+      icon: <LogoutOutlined />,
+      label: "Çıkış Yap",
+      key: "logout",
+      onClick: () => {},
+    },
+  ];
   return (
     <div>
       <div

@@ -20,7 +20,12 @@ const onFinishFailed = (errorInfo: any) => {
 const FlightSearch = () => {
   const router = useRouter();
   return (
-    <Card style={{ zIndex: "33",boxShadow:"1px 1px 24px 1px rgba(208, 216, 243, 0.6)"}}>
+    <Card
+      style={{
+        zIndex: "33",
+        boxShadow: "1px 1px 24px 1px rgba(208, 216, 243, 0.6)",
+      }}
+    >
       <Form
         name="basic"
         layout="vertical"
@@ -61,11 +66,11 @@ const FlightSearch = () => {
           style={{ width: "15rem" }}
         >
           <Select>
-            <Select.Option value="34">İstanbul</Select.Option>
-            <Select.Option value="35">İzmir</Select.Option>
-            <Select.Option value="06">Ankara</Select.Option>
-            <Select.Option value="61">Trabzon</Select.Option>
-            <Select.Option value="07">Antalya</Select.Option>
+            <Select.Option value="34-Istanbul">İstanbul</Select.Option>
+            <Select.Option value="35-Izmir">İzmir</Select.Option>
+            <Select.Option value="06-Ankara">Ankara</Select.Option>
+            <Select.Option value="61-Trabzon">Trabzon</Select.Option>
+            <Select.Option value="07-Antalya">Antalya</Select.Option>
           </Select>
         </Form.Item>
 
@@ -78,11 +83,11 @@ const FlightSearch = () => {
           style={{ width: "15rem" }}
         >
           <Select>
-            <Select.Option value="34">İstanbul</Select.Option>
-            <Select.Option value="35">İzmir</Select.Option>
-            <Select.Option value="06">Ankara</Select.Option>
-            <Select.Option value="61">Trabzon</Select.Option>
-            <Select.Option value="07">Antalya</Select.Option>
+            <Select.Option value="34-Istanbul">İstanbul</Select.Option>
+            <Select.Option value="35-Izmir">İzmir</Select.Option>
+            <Select.Option value="06-Ankara">Ankara</Select.Option>
+            <Select.Option value="61-Trabzon">Trabzon</Select.Option>
+            <Select.Option value="07-Antalya">Antalya</Select.Option>
           </Select>
         </Form.Item>
 

@@ -12,7 +12,7 @@ const AxiosInstance = async () => {
     baseURL: backendUrl,
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjE0MGQzN2ZmLTg4YzUtNGFlNi02ZTJkLTA4ZGJmYTljNzU0MSIsIm5iZiI6MTcwMjUxNjUxNiwiZXhwIjoxNzAyNTE3MTE2LCJpc3MiOiJ1Z3VyQHVndXIuY29tIiwiYXVkIjoidWd1ckB1Z3VyLmNvbSJ9.Wi1PpUFdHQf4f5gJG_nV2UAgvmmEttOSkN88Qszs5FFpCtmZG3f1NRidAW5IQ51viC3qtj8rotviIs8gOYi1XQ`,
+      Authorization: `Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjE0MGQzN2ZmLTg4YzUtNGFlNi02ZTJkLTA4ZGJmYTljNzU0MSIsIm5iZiI6MTcwMjU2ODMxMSwiZXhwIjoxNzAyNjI4MzExLCJpc3MiOiJ1Z3VyQHVndXIuY29tIiwiYXVkIjoidWd1ckB1Z3VyLmNvbSJ9.WSdDbS8m2KaSwzZWCCWtdNmxtCozrFBlb1w1tsJ7MXTs3sKBsr_V_HeR5SN4Fpm4avV1mZr38ul430ZvyZ1Eyw`,
     },
   });
 
