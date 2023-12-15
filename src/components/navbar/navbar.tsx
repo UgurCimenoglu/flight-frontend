@@ -19,7 +19,10 @@ const Navbar = () => {
       icon: <LogoutOutlined />,
       label: "Çıkış Yap",
       key: "logout",
-      onClick: () => {},
+      onClick: () => {
+        localStorage.removeItem("token");
+        router.push("/login");
+      },
     },
   ];
   return (

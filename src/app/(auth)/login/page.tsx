@@ -13,8 +13,10 @@ const UserLogin = () => {
     mutationKey: ["login"],
     onSuccess: (data) => {
       toast.success("Giriş Başarılı");
-      if (data.data?.token) localStorage.setItem("token", data.data?.token);
-      router.push("/");
+      if (data.data?.token) {
+        localStorage.setItem("token", data.data?.token);
+        router.push("/");
+      }
     },
     onError: (e) => {
       toast.error("Hata Meydana Geldi!");
@@ -41,7 +43,7 @@ const UserLogin = () => {
         alignItems: "center",
       }}
     >
-      <h1 style={{ marginTop: "12rem" }}>Kayıt Ol</h1>
+      <h1 style={{ marginTop: "12rem" }}>Giriş Yap</h1>
       <Form
         style={{ width: "500px" }}
         name="basic"
@@ -79,7 +81,7 @@ const UserLogin = () => {
 
         <Form.Item style={{ float: "right" }}>
           <Button type="primary" htmlType="submit">
-            Kayıt Ol
+            Giriş
           </Button>
         </Form.Item>
       </Form>

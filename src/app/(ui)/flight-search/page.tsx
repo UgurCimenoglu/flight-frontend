@@ -32,14 +32,12 @@ const FlightSearch = () => {
     mutationKey: ["addFlights"],
     onSuccess: (data) => {
       handleCloseModal();
-      console.log("dataaaa", data);
       toast.success(
         "Rezervasyon Başarıyla Oluşturuldu! Anasayfaya Yönlendiriliyorsunuz"
       );
-      //router.push("/");
+      router.push("/");
     },
     onError: (e) => {
-      console.log("ererere", e);
       toast.error(
         "Rezervasyon Oluşturulurken Hata Meydana Geldi! Lütfen Bilgilerinizi Kontrol Ediniz!"
       );
@@ -205,7 +203,7 @@ const FlightSearch = () => {
             rules={[
               {
                 required: true,
-                min: 1,
+                min: 3,
                 message: "Lüfen En Az 3 Karakter İçeren Bir İsim Giriniz!",
               },
             ]}
@@ -233,8 +231,8 @@ const FlightSearch = () => {
             rules={[
               {
                 required: true,
-                min: 3,
-                message: "Lüfen En Az 3 Karakter İçeren Bir Email Giriniz!",
+                type: "email",
+                message: "Lüfen Geçerli Formatta Bir Email Giriniz!",
               },
             ]}
           >
@@ -271,7 +269,7 @@ const FlightSearch = () => {
 
           <Form.Item
             label="Description"
-            name="DDescription"
+            name="Description"
             rules={[
               {
                 required: false,

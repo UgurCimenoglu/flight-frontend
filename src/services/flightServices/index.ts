@@ -49,7 +49,9 @@ export const AddFlight = async (
   )
     .post<AddFlightResponse>("/Flights/Add", JSON.stringify(data))
     .then((res) => res.data)
-    .catch((e) => {throw new Error(e)});
+    .catch((e) => {
+      throw new Error(e);
+    });
 };
 
 export type UserFlight = {

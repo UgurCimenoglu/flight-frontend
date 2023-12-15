@@ -5,15 +5,18 @@ import React from "react";
 import Navbar from "../../components/navbar/navbar";
 import FooterComp from "../../components/footer/footer";
 import UIContent from "../../components/UIContent/content";
+import CustomAuthGuard from "@/components/authGuard";
 
 export default function layout({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <Navbar />
-      <Layout>
-        <UIContent>{children}</UIContent>
-      </Layout>
-      <FooterComp />
-    </>
+    <CustomAuthGuard>
+      <>
+        <Navbar />
+        <Layout>
+          <UIContent>{children}</UIContent>
+        </Layout>
+        <FooterComp />
+      </>
+    </CustomAuthGuard>
   );
 }
